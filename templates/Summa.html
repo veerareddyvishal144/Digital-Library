@@ -1,0 +1,124 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://www.clker.com/cliparts/3/F/h/l/W/o/cyrillic-letter-o-md.png">
+
+    <title>Book Summarize</title>
+
+
+    
+<style>
+   body {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
+
+   /* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+</style> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>   
+  </head>
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand text-capitalize" href="Dashboard">{{name}}</a>
+         <a href="signout">  <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-lock"></span> Logout
+        </button></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="Dashboard">Home <span class="sr-only">(current)</span></a>
+            </li>
+           
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Summarize A book</a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+     
+
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <form method="POST" action="">
+	      <label><b>Title</b></label>
+<input type="text" name="bookname" id="bookname" class="form-control" autocomplete="off">
+<label><b>Summary</b></label>
+<textarea name="editor1" class="form-control" id="editor1"></textarea>
+		
+        <button class="btn btn-primary">Save</button>
+        
+        
+
+	</form>
+        <!-- START THE FEATURETTES -->
+
+        <br><br>
+
+      {% for x in posts%}
+        
+       <div class="shadow-lg p-8 mb-9 bg-light">
+ <h1 class="text-success">{{x[0]}}</h1> 
+            <h2><i class="text-capitalize text-primary">{{x[1]}}</i></h2>
+            <form  method="post" action="delete">
+            <input type="hidden" name="numid" id="numid" value="{{x[2]}}">
+           <input type="submit" class="btn btn-danger" value="Delete">
+           </form>
+           
+</div><br>
+
+       
+        
+        {%endfor%}
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+   
+    
+  </body>
+</html>
+

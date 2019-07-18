@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  
+  
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="css1/style.css">
+<link rel="icon" href="http://www.clker.com/cliparts/3/F/h/l/W/o/cyrillic-letter-o-md.png">
+  
+
+</head>
+
+<body background="#FCFFF9">
+
+  <div class="container">
+    
+  <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+    <div class="header">
+       
+
+      <div class="header__text-group text-center">
+        <h1 class="header__heading">Register</h1>
+        
+      </div> <!-- close .text-group -->
+    </div> <!-- close .header -->
+    
+    <hr />
+   
+    
+    <br />
+     {% if reg %}
+        
+        <p>{{reg}}</p>
+        {%endif%}
+    
+    <div class="form-register">
+      <form name="register" method="POST" action="/register">
+        <input name="utf8" type="hidden" value="✓">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label for="user_first_name">First name</label>
+              <input autofocus="autofocus" class="form-control" required="required" type="text" name="first" id="user_first_name">
+            </div> <!-- close .form-group -->
+          </div> <!-- close .col -->
+
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label for="user_last_name">Last name</label>
+              <input class="form-control" type="text" name="last" id="user_last_name">
+            </div> <!-- close .form-group -->
+          </div> <!-- close .col -->
+        </div> <!-- close .row -->
+
+        <div class="form-group">
+          <label for="user_email">
+            Email address
+          </label>
+          <input class="form-control" type="email" value="" name="email" id="user_email" data-cip-id="cIPJQ342845639">
+
+        </div> <!-- close .form-group -->
+
+        <div class="form-group">
+          <label for="user_username">
+            Password <span class="text-secondary">(only letters, numbers, and underscores)</span>
+          </label>
+          <input class="form-control" required="required" type="password" name="password" id="user_username" data-cip-id="user_username" autocomplete="off">
+        </div> <!-- close .form-group -->
+
+        <div class="form-group">
+          <label for="user_password">
+            Conf.Password <span class="text-secondary">(Both Should Match)</span>
+          </label>
+          <input autocomplete="off" class="form-control" required="required" type="password" name="user[password]" id="user_password" data-cip-id="cIPJQ342845640">
+
+        </div> <!-- close .form-group -->
+
+       
+
+        <div class="form-group">
+          <input type="submit" value="Submit" class="btn btn-primary">
+        </div> <!-- close .form-group -->
+
+        <div class="form-group text-center">
+          <p class="text-secondary zeta">
+            By joining, you agree to the <a href="/terms">Terms and Privacy Policy</a>.
+          </p>
+        </div>
+      </form>
+    </div> <!-- close .form -->
+
+    <div class="sheet sheet--padding-small text-center">
+      <p class="epsilon">Already joined? <a href="home">Login</a></p>
+    </div>
+
+  </div>
+</div>
+  
+  
+
+</body>
+
+</html>
